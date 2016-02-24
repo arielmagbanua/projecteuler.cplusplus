@@ -43,25 +43,7 @@ int main(){
 	}
 	
 	cout << endl << "The largest prime factor of the number " << num << " is " << largest;
-	
-	/*
-	while(decreasing>0){
 		
-		--decreasing;
-		
-		if(decreasing>0 && refNum%decreasing==0){
-			
-			if(largest<decreasing){
-				largest = decreasing;
-			}
-			
-			//refNum = decreasing;
-			
-			cout << decreasing << " ";
-		}
-	}
-	*/
-	
 	getch();
 	return 0;
 }
