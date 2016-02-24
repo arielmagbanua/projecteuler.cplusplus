@@ -1,5 +1,6 @@
 #include<iostream>
 #include<conio.h>
+#include<stdint.h>
 
 using namespace std;
 
@@ -12,39 +13,38 @@ The prime factors of 13195 are 5, 7, 13 and 29.
 What is the largest prime factor of the number 600851475143 ?
 */
 
+bool isPrime(uint64_t num);
+
 int main(){
 	
-	int num = 0;
-	int largest = 0;
-	int decreasing = 0;
-	int refNum = 0;
+	uint64_t num = 0;
+	uint64_t largest = 0;
 	
 	cout << "Enter a number: ";
 	cin >> num;
 	
-	decreasing = num;
-	refNum = num;
-	
-	/*
-	do{
+	if(isPrime(num)){
+		largest = num;
+	}
+	else {
 		
-		--decreasing;
+		cout << endl << "Prime Factors are: ";
 		
-		int n = decreasing;
+		for(int n=2;n<=num;n++){
 		
-		if(num%decreasing==0){
-			
-			largest = decreasing;
-			
-			if(decreasing>largest){
-				largest=decreasing;
+			if(num%n==0){
+				//determine if this number is prime
+				if(isPrime(n)){
+					largest=n;
+					cout << n << " ";
+				}
 			}
 		}
-		
-	} while(decreasing>0);
-	*/
+	}
 	
+	cout << endl << "The largest prime factor of the number " << num << " is " << largest;
 	
+	/*
 	while(decreasing>0){
 		
 		--decreasing;
@@ -60,9 +60,21 @@ int main(){
 			cout << decreasing << " ";
 		}
 	}
-	
-	cout << "the largest prime factor of the number " << num << " is " << largest;
+	*/
 	
 	getch();
 	return 0;
+}
+
+bool isPrime(uint64_t num){
+	
+	for(uint64_t n=2;n<num;n++){
+		
+		if(num%n==0){
+			return false;
+		}
+		
+	}
+	
+	return true;
 }
