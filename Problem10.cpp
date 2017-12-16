@@ -17,7 +17,8 @@ bool isPrime(uint64_t num);
 
 int main(){
 	
-	uint64_t limit = 2000000;
+	//uint64_t limit = 2000000;
+	uint64_t limit = 14;
 	uint64_t sum = 0;
 	
 	for(uint64_t n=2;n<limit;n++){
@@ -44,3 +45,4 @@ bool isPrime(uint64_t num){
 	
 	return true;
 }
+
