@@ -60,5 +60,3 @@ bool isPrime(uint64_t num){
 	
 	return true;
 }
-
-function 
